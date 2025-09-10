@@ -1,3 +1,11 @@
 .post-card-wrapper {
+  margin-bottom: 16px;
   cursor: pointer;
+}
+
+.loader-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

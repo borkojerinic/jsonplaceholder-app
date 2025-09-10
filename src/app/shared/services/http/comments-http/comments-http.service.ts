@@ -14,7 +14,7 @@ export class CommentsHttpService extends CoreApiService {
    *
    * @returns Observable<Comment[]>
    */
-  public getComments(postId: string): Observable<Comment[]> {
+  public getComments(postId: number): Observable<Comment[]> {
     return this.get<Comment[]>(`/posts/${postId}/comments`);
   }
 }
