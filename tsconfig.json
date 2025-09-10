@@ -18,7 +18,10 @@
     "baseUrl": "./",
     "paths": {
       "@app-environment": ["src/environments/environment"],
-      "@app-core-services": ["src/app/core/services"]
+      "@app-core-services": ["src/app/core/services"],
+      "@app-models": ["src/app/shared/models"],
+      "@app-shared-services": ["src/app/shared/services"],
+      "@app-enums": ["src/app/shared/enums"]
     }
   },
   "angularCompilerOptions": {
