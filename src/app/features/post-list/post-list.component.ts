@@ -1,58 +1,30 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  DestroyRef,
-  inject,
-  OnInit,
-  signal,
-} from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ChangeDetectionStrategy, Component, inject, Signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { RouterModule } from '@angular/router';
 import { Post } from '@app-models';
 import { PostHttpService } from '@app-shared-services';
 
 @Component({
   selector: 'app-post-list.component',
-  imports: [MatCardModule],
+  imports: [MatCardModule, RouterModule, MatProgressSpinnerModule],
   templateUrl: './post-list.component.html',
   styleUrl: './post-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PostListComponent implements OnInit {
-  //#region Properties
-
-  public posts = signal<Post[] | null>(null);
-
-  //#endregion
-
+export class PostListComponent {
   //#region Dependencies
 
   private postHttpService = inject(PostHttpService);
-  private destroyRef = inject(DestroyRef);
 
   //#endregion
 
-  //#region Angular life cycle hooks
+  //#region Properties
 
-  ngOnInit(): void {
-    this.initPostsList();
-  }
-
-  //#endregion
-
-  //#region Init methods
-
-  /**
-   * Fetches posts from the API and updates the posts signal.
-   *
-   * @returns void
-   */
-  private initPostsList(): void {
-    this.postHttpService
-      .getPosts()
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((posts) => this.posts.set(posts));
-  }
+  public posts: Signal<Post[] | null> = toSignal<Post[] | null>(this.postHttpService.getPosts(), {
+    initialValue: null,
+  });
 
   //#endregion
 }
