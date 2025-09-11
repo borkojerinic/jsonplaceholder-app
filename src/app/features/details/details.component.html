@@ -1,23 +1,25 @@
 @defer (when post()) {
-  <h3 class="post-title-wrapper">Post</h3>
-  <mat-card appearance="outlined" class="post-card-wrapper">
-    <mat-card-header>
-      <mat-card-title>{{ post()?.title }}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>{{ post()?.body }}</mat-card-content>
-  </mat-card>
-
-  <h3 class="comment-title-wrapper">Comments</h3>
-
-  @for (comment of comments(); track comment.id) {
-    <mat-card appearance="outlined" class="comment-card-wrapper">
+  <div class="detail-page-container">
+    <h3 class="post-title-wrapper">Post</h3>
+    <mat-card appearance="outlined" class="post-card-wrapper">
       <mat-card-header>
-        <mat-card-title>{{ comment.name }}</mat-card-title>
-        <mat-card-subtitle>{{ comment.email }}</mat-card-subtitle>
+        <mat-card-title>{{ post()?.title }}</mat-card-title>
       </mat-card-header>
-      <mat-card-content>{{ comment.body }}</mat-card-content>
+      <mat-card-content>{{ post()?.body }}</mat-card-content>
     </mat-card>
-  }
+
+    <h3 class="comment-title-wrapper">Comments</h3>
+
+    @for (comment of comments(); track comment.id) {
+      <mat-card appearance="outlined" class="comment-card-wrapper">
+        <mat-card-header>
+          <mat-card-title>{{ comment.name }}</mat-card-title>
+          <mat-card-subtitle>{{ comment.email }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>{{ comment.body }}</mat-card-content>
+      </mat-card>
+    }
+  </div>
 } @placeholder {
   <div class="loader-wrapper">
     <mat-spinner mode="indeterminate" color="primary"></mat-spinner>

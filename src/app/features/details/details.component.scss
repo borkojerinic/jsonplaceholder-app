@@ -15,3 +15,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.detail-page-container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+}
