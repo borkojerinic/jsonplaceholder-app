@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PostListComponent } from './post-list.component';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('PostListComponent', () => {
   let component: PostListComponent;
@@ -8,9 +8,9 @@ describe('PostListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PostListComponent]
-    })
-    .compileComponents();
+      imports: [PostListComponent],
+      providers: [provideHttpClient()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PostListComponent);
     component = fixture.componentInstance;
