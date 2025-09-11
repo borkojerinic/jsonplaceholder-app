@@ -2,7 +2,19 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.2.
 
+## Prerequisites
+
+In order to successfully use system, please install following:
+
+- NodeJs v20.19.5 and corresponding package management library (e.g. npm v11.6.0)
+
 ## Development server
+
+For installing all dependencies use command:
+
+```bash
+npm i
+```
 
 To start a local development server, run:
 
@@ -44,15 +56,15 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ng test
 ```
 
-## Running end-to-end tests
+## Deploy
 
-For end-to-end (e2e) testing, run:
+Executing following command:
 
 ```bash
-ng e2e
+ng build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Applications will be built (in production mode) and it's artifacts will be stored in [dist/jsonplaceholder](dist/jsonplaceholder).
 
 ## Additional Resources
 
