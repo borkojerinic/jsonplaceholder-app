@@ -1,4 +1,4 @@
-@if (posts()) {
+@defer (when posts()) {
   @for (post of posts(); track post.id) {
     <mat-card [routerLink]="[post.id]" appearance="outlined" class="post-card-wrapper">
       <mat-card-header>
@@ -7,7 +7,7 @@
       <mat-card-content>{{ post.body }}</mat-card-content>
     </mat-card>
   }
-} @else {
+} @placeholder {
   <div class="loader-wrapper">
     <mat-spinner mode="indeterminate" color="primary"></mat-spinner>
   </div>
