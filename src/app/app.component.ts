@@ -7,6 +7,4 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  protected readonly title = signal('jsonplaceholder-app');
-}
+export class AppComponent {}

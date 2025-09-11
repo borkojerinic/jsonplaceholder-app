@@ -83,13 +83,15 @@
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
+            "codeCoverage": true,
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"]
+            "styles": ["src/styles.scss"],
+            "karmaConfig": "karma.conf.js"
           }
         }
       }
