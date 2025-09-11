@@ -1,0 +1,25 @@
+.post-title-wrapper,
+.comment-title-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.post-card-wrapper,
+.comment-card-wrapper {
+  margin-bottom: 16px;
+}
+
+.loader-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-page-container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+}
