@@ -35,10 +35,10 @@ export class DetailsComponent {
         forkJoin({
           post: this.postHttpService.getPost(id),
           comments: this.commentsHttpService.getComments(id),
-        })
-      )
+        }),
+      ),
     ),
-    { initialValue: null }
+    { initialValue: null },
   );
 
   public post = computed(() => this.postData()?.post ?? null);
