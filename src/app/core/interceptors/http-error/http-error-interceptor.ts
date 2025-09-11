@@ -11,6 +11,6 @@ export const httpErrorInterceptor: HttpInterceptorFn = (req, next) => {
     catchError((error: HttpErrorResponse) => {
       snackBarService.displaySnackBar(error.message, SnackBarType.Error);
       return throwError(() => error);
-    })
+    }),
   );
 };

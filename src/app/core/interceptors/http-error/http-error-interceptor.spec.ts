@@ -51,7 +51,7 @@ describe('httpErrorInterceptor', () => {
       error: () => {
         expect(snackBarServiceSpy.displaySnackBar).toHaveBeenCalledWith(
           'Http failure response for /test-url: 500 Internal Server Error',
-          SnackBarType.Error
+          SnackBarType.Error,
         );
       },
     });

@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CoreApiService {
-  protected readonly path = environment.jsonApiUrl;
-  protected readonly http = inject(HttpClient);
+  private readonly path = environment.jsonApiUrl;
+  private readonly http = inject(HttpClient);
 
   /**
    * Generic Get method, will return single element of type T.
